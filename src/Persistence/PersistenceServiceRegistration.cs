@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Application.IRepositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Contexts;
+using Persistence.Repositories;
 
 namespace Persistence;
 
@@ -20,7 +22,8 @@ public static class PersistenceServiceRegistration
           #region Repositories
 
           // Biri senden Interface'i isterse ona şu Class'ı ver
-          //services.AddScoped<IBrandRepository, BrandRepository>();
+          services.AddScoped<IBrandReadRepository, BrandReadRepository>();
+          services.AddScoped<IBrandWriteRepository, BrandWriteRepository>();
 
           #endregion
 
