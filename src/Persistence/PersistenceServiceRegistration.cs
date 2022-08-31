@@ -14,7 +14,7 @@ public static class PersistenceServiceRegistration
      {
           #region Microsoft SQL Server
 
-          services.AddDbContext<TrainingCampDbContext>(options =>
+          services.AddDbContext<AdvancedSoftwareDeveloperTrainingCampDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("TrainingCampConnection")));
 
           #endregion

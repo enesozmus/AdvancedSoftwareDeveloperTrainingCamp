@@ -11,9 +11,9 @@ namespace Persistence.Repositories;
 
 public class ReadRepository<T> : IReadRepository<T> where T : BaseEntity
 {
-     protected readonly TrainingCampDbContext _context;
+     protected readonly AdvancedSoftwareDeveloperTrainingCampDbContext _context;
 
-     public ReadRepository(TrainingCampDbContext context)
+     public ReadRepository(AdvancedSoftwareDeveloperTrainingCampDbContext context)
           => _context = context ?? throw new ArgumentNullException(nameof(context));
 
      #region IRepository(Tables)

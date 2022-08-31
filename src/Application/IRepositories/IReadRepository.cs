@@ -11,7 +11,7 @@ public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
 
      Task<IReadOnlyList<T>> GetAllAsync();
 
-     Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null);
+     Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null); // GetAsync
      Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
                                           params Expression<Func<T, object>>[] includes);
      Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
@@ -38,12 +38,14 @@ public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
 
      //Task<IPaginate<T>> GetAllAsPaginateAsync(Expression<Func<T, bool>>? predicate = null);
 
+     // GetListAsync
      Task<IPaginate<T>> GetListAsPaginateAsync(Expression<Func<T, bool>>? predicate = null,
                                      Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
                                      Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
                                      int index = 0, int size = 10, bool enableTracking = true,
                                      CancellationToken cancellationToken = default);
 
+     // GetListByDynamicAsync
      Task<IPaginate<T>> GetListAsPaginateByDynamicAsync(Dynamic.Dynamic dynamic,
                                               Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
                                               int index = 0, int size = 10, bool enableTracking = true,

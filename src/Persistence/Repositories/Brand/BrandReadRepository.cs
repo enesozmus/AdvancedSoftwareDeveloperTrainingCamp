@@ -6,5 +6,5 @@ namespace Persistence.Repositories;
 
 public class BrandReadRepository : ReadRepository<Brand>, IBrandReadRepository
 {
-     public BrandReadRepository(TrainingCampDbContext context) : base(context) { }
+     public BrandReadRepository(AdvancedSoftwareDeveloperTrainingCampDbContext context) : base(context) { }
 }

@@ -5,7 +5,7 @@ using Persistence.Configurations;
 
 namespace Persistence.Contexts;
 
-public class TrainingCampDbContext : DbContext
+public class AdvancedSoftwareDeveloperTrainingCampDbContext : DbContext
 {
      #region Entities
 
@@ -17,7 +17,7 @@ public class TrainingCampDbContext : DbContext
 
      protected IConfiguration Configuration { get; set; }
 
-     public TrainingCampDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
+     public AdvancedSoftwareDeveloperTrainingCampDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
           => Configuration = configuration;
 
      #endregion

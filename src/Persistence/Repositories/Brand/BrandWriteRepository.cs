@@ -6,5 +6,5 @@ namespace Persistence.Repositories;
 
 public class BrandWriteRepository : WriteRepository<Brand>, IBrandWriteRepository
 {
-     public BrandWriteRepository(TrainingCampDbContext context) : base(context) { }
+     public BrandWriteRepository(AdvancedSoftwareDeveloperTrainingCampDbContext context) : base(context) { }
 }

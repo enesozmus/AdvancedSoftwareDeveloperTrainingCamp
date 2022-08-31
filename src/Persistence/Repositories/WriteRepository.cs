@@ -10,9 +10,9 @@ public class WriteRepository<T> : IWriteRepository<T> where T : BaseEntity
 
      #region ctor
 
-     protected readonly TrainingCampDbContext _context;
+     protected readonly AdvancedSoftwareDeveloperTrainingCampDbContext _context;
 
-     public WriteRepository(TrainingCampDbContext context)
+     public WriteRepository(AdvancedSoftwareDeveloperTrainingCampDbContext context)
           => _context = context ?? throw new ArgumentNullException(nameof(context));
 
      #endregion
