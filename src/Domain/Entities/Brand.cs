@@ -2,13 +2,6 @@
 
 public class Brand : BaseEntity
 {
-     #region Properties
-
-     public string Name { get; set; }
-
-
-     #endregion
-
      #region ctor
 
      public Brand()
@@ -16,11 +9,19 @@ public class Brand : BaseEntity
 
      }
 
-     public Brand(int id, string name) : this()
+     public Brand(int id, DateTime createdDate, string name) : this()
      {
           Id = id;
+          CreatedDate = createdDate;
           Name = name;
      }
+
+     #endregion
+
+     #region Properties
+
+     public string Name { get; set; }
+     public ICollection<Model> Models { get; set; }
 
      #endregion
 }

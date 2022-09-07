@@ -7,18 +7,19 @@ namespace Persistence.Contexts;
 
 public class AdvancedSoftwareDeveloperTrainingCampDbContext : DbContext
 {
-     #region Entities
-
-     public DbSet<Brand> Brands { get; set; }
-
-     #endregion
-
      #region Ctor
 
      protected IConfiguration Configuration { get; set; }
 
      public AdvancedSoftwareDeveloperTrainingCampDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
           => Configuration = configuration;
+
+     #endregion
+
+     #region Entities
+
+     public DbSet<Brand> Brands { get; set; }
+     public DbSet<Model> Models { get; set; }
 
      #endregion
 
@@ -35,7 +36,7 @@ public class AdvancedSoftwareDeveloperTrainingCampDbContext : DbContext
 
                          break;
                     case EntityState.Modified:
-                         entry.Entity.UpdatedDate = DateTime.Now;
+                         entry.Entity.LastModifiedDate = DateTime.Now;
                          break;
                }
           }
@@ -56,6 +57,7 @@ public class AdvancedSoftwareDeveloperTrainingCampDbContext : DbContext
      protected override void OnModelCreating(ModelBuilder modelBuilder)
      {
           modelBuilder.ApplyConfiguration(new BrandConfiguration());
+          modelBuilder.ApplyConfiguration(new ModelConfiguration());
 
           base.OnModelCreating(modelBuilder);
      }

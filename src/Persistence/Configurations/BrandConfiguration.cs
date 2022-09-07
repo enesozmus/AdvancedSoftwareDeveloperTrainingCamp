@@ -16,35 +16,34 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
 
           #region ForeingKey
 
-          //builder.HasMany(x => x.Products)
-          //            .WithOne(x => x.Brand)
-          //            .HasForeignKey(x => x.BrandId)
-          //            .IsRequired(false)
-          //            .OnDelete(DeleteBehavior.Restrict);
+          builder.HasMany(x => x.Models)
+                    .WithOne(x => x.Brand )
+                    .HasForeignKey(x => x.BrandId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
           #endregion
 
           #region SeedDatas
 
           Brand[] brandSeedDatas = {
-               new(1, "Marka-1"),
-               new(2, "Marka-2"),
-               new(3, "Marka-3"),
-               new(4, "Marka-4"),
-               new(5, "Marka-5"),
-               new(6, "Marka-6"),
-               new(7, "Marka-7"),
-               new(8, "Marka-8"),
-               new(9, "Marka-9"),
-               new(10, "Marka-10"),
-               new(11, "Marka-11"),
-               new(12, "Marka-12"),
-               new(13, "Marka-13"),
-               new(14, "Marka-14"),
-               new(15, "Marka-15"),
-               new(16, "Marka-16"),
-               new(17, "Marka-17"),
-               new(18, "Marka-18"),
+               new(1, new DateTime(2022, 09, 07), "Marka-1"),
+               new(2, new DateTime(2022, 09, 07), "Marka-2"),
+               new(3, new DateTime(2022, 09, 07), "Marka-3"),
+               new(4, new DateTime(2022, 09, 07), "Marka-4"),
+               new(5, new DateTime(2022, 09, 07), "Marka-5"),
+               new(6, new DateTime(2022, 09, 07), "Marka-6"),
+               new(7, new DateTime(2022, 09, 07), "Marka-7"),
+               new(8, new DateTime(2022, 09, 07), "Marka-8"),
+               new(9, new DateTime(2022, 09, 07), "Marka-9"),
+               new(10, new DateTime(2022, 09, 07), "Marka-10"),
+               new(11, new DateTime(2022, 09, 07), "Marka-11"),
+               new(12, new DateTime(2022, 09, 07), "Marka-12"),
+               new(13, new DateTime(2022, 09, 07), "Marka-13"),
+               new(14, new DateTime(2022, 09, 07), "Marka-14"),
+               new(15, new DateTime(2022, 09, 07), "Marka-15"),
+               new(16, new DateTime(2022, 09, 07), "Marka-16"),
+               new(17, new DateTime(2022, 09, 07), "Marka-17"),
+               new(18, new DateTime(2022, 09, 07), "Marka-18"),
           };
 
           builder.HasData(brandSeedDatas);

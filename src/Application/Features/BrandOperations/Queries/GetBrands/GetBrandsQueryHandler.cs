@@ -20,7 +20,8 @@ public class GetBrandsQueryHandler : IRequestHandler<GetBrandsQueryRequest, GetB
      public async Task<GetBrandsQueryResponse> Handle(GetBrandsQueryRequest request, CancellationToken cancellationToken)
      {
           // getir
-          IPaginate<Brand> brands = await _brandReadRepository.GetListAsPaginateAsync(index: request.PageRequest.Page, size: request.PageRequest.PageSize);
+          IPaginate<Brand> brands = await _brandReadRepository.
+               GetListAsPaginateAsync(index: request.PageRequest.Page, size: request.PageRequest.PageSize);
 
           // eşle
           GetBrandsQueryResponse mappedBrands = _mapper.Map<GetBrandsQueryResponse>(brands);

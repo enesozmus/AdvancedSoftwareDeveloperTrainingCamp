@@ -8,17 +8,11 @@ public class BrandsController : BaseController
 {
      [HttpGet]
      public async Task<IActionResult> GetBrands([FromQuery] GetBrandsQueryRequest request)
-     {
-          GetBrandsQueryResponse response = await Mediator.Send(request);
-          return Ok(response);
-     }
+          => Ok(await Mediator.Send(request));
 
      [HttpGet("{Id}")]
      public async Task<IActionResult> GetBrandById([FromRoute] GetBrandDetailQueryRequest request)
-     {
-          GetBrandDetailQueryResponse response = await Mediator.Send(request);
-          return Ok(response);
-     }
+          => Ok(await Mediator.Send(request));
 
      [HttpPost]
      public async Task<IActionResult> CreateBrand([FromBody] CreateBrandCommandRequest request)

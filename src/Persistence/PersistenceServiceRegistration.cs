@@ -25,6 +25,9 @@ public static class PersistenceServiceRegistration
           services.AddScoped<IBrandReadRepository, BrandReadRepository>();
           services.AddScoped<IBrandWriteRepository, BrandWriteRepository>();
 
+          services.AddScoped<IModelReadRepository, ModelReadRepository>();
+          services.AddScoped<IModelWriteRepository, ModelWriteRepository>();
+
           #endregion
 
           return services;
